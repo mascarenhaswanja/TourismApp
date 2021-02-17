@@ -59,19 +59,19 @@ public class MainActivity extends AppCompatActivity implements Serializable {
             @Override
             public void onClick(View view) {
 
-                 // Recovery SharedPreferences
+                // Recovery SharedPreferences
                 SharedPreferences prefs = getSharedPreferences("login", Context.MODE_PRIVATE);
                 checkSP = prefs.getBoolean("Check", false);
                 userEmailSP = prefs.getString("email",null);
                 userPasswordSP = prefs.getString("password",null);
 
                 if (checkSP) {
-                    Toast.makeText(getApplicationContext(),"Have Email", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getApplicationContext(),"Have Email", Toast.LENGTH_LONG).show();
                     email = etEmail.getText().toString();
                     password = etPassword.getText().toString();
                 }
                 else {
-                    Toast.makeText(getApplicationContext(),"Need Email", Toast.LENGTH_LONG).show();
+                   // Toast.makeText(getApplicationContext(),"Need Email", Toast.LENGTH_LONG).show();
                     email = userEmailSP;
                     password =  userPasswordSP;
                 }
@@ -105,36 +105,36 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         });
 
         rememberMeCheck.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Log.d(TAG, "Login rememberMe");
-                        // Shared preferences
-                        email = etEmail.getText().toString();
-                        password = etPassword.getText().toString();
-                        Log.d(TAG, "Remember (Email and password) " + email + password);
-                        sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
-                        rememberMeCheck = (CheckBox)findViewById(R.id.cbRemember);
-                        checkSP = sharedPreferences.getBoolean("Check", false);
-                        userEmailSP = sharedPreferences.getString("email", "");
-                        userPasswordSP = sharedPreferences.getString("password", "");
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "Login rememberMe");
+                // Shared preferences
+                email = etEmail.getText().toString();
+                password = etPassword.getText().toString();
+                Log.d(TAG, "Remember (Email and password) " + email + password);
+                sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                rememberMeCheck = (CheckBox)findViewById(R.id.cbRemember);
+                checkSP = sharedPreferences.getBoolean("Check", false);
+                userEmailSP = sharedPreferences.getString("email", "");
+                userPasswordSP = sharedPreferences.getString("password", "");
 
-                        SharedPreferences.Editor preferencesEditor = sharedPreferences.edit();
-                        boolean checked  = ((CheckBox)rememberMeCheck).isChecked();
-                        if(checked){
-                            Log.d(TAG, "Remember Me Checked: "+true+" Save shared preference.");
-                             preferencesEditor.putString("username", email);
-                             preferencesEditor.putString("password", password);
-                             preferencesEditor.putBoolean("Check",true);
-                            Log.d(TAG, "email and password set: " + email + password);
-                        }else{
-                            Log.d(TAG, "Remember Me Unchecked: "+false+"  Save shared preference.");
-                            preferencesEditor.putBoolean("Check",false);
-                        }
-                        preferencesEditor.apply();
-                        Toast.makeText(getBaseContext(), "Saved", Toast.LENGTH_SHORT).show();
-                        Log.d(TAG, "Checked shared preference saved!");
+                SharedPreferences.Editor preferencesEditor = sharedPreferences.edit();
+                boolean checked  = ((CheckBox)rememberMeCheck).isChecked();
+                if(checked){
+                    Log.d(TAG, "Remember Me Checked: "+true+" Save shared preference.");
+                    preferencesEditor.putString("username", email);
+                    preferencesEditor.putString("password", password);
+                    preferencesEditor.putBoolean("Check",true);
+                    Log.d(TAG, "email and password set: " + email + password);
+                }else{
+                    Log.d(TAG, "Remember Me Unchecked: "+false+"  Save shared preference.");
+                    preferencesEditor.putBoolean("Check",false);
+                }
+                preferencesEditor.apply();
+                Toast.makeText(getBaseContext(), "Saved", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "Checked shared preference saved!");
 
-                    }
-                });
+            }
+        });
     }
 }

@@ -39,14 +39,6 @@ import java.util.ArrayList;
 
 public class AttractionDetail extends AppCompatActivity {
 
-    // @TODO
-    //  Need to know what user
-//    if (email.equals("thanos")) {
-//        write thanos.json
-//    } else if (email.equals("wonderwoman")) {
-//        write thanos.json
-//    }
-
     //  attraction id and ratting
 
     final String TAG = "Tourist-Detail";
@@ -63,9 +55,6 @@ public class AttractionDetail extends AppCompatActivity {
         Attraction attraction = (Attraction) intent.getSerializableExtra("attractionDetail");
 
         username = intent.getStringExtra("u");
-
-        Log.d(TAG, "Attraction Detail " + attraction.name + " " + username);
-        //  Toast.makeText(this, "Attraction " +  attraction.mainImage, Toast.LENGTH_SHORT).show();
 
         if (getIntent() != null && getIntent().getExtras() != null) {
             TextView detailName = findViewById(R.id.tvName);
@@ -106,6 +95,8 @@ public class AttractionDetail extends AppCompatActivity {
             int resID2 = getResources().getIdentifier(image2, "drawable", getPackageName());
             img2.setImageResource(resID2);
 
+
+            // Works OK
 //            detailWebsite.setOnClickListener(new View.OnClickListener() {
 //                @Override
 //                public void onClick(View v) {
@@ -140,22 +131,22 @@ public class AttractionDetail extends AppCompatActivity {
 
             });
 
-//            ratingBar = (RatingBar) findViewById(R.id.rbAttraction);
-//            // @TODO getRating
-//            ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-//                @Override
-//                public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-//                    Log.d("TAG", "Ratting" + v + " " + b);
-//                    storeRatingJSON();
-//                }
-//            });
+            ratingBar = (RatingBar) findViewById(R.id.rbAttraction);
+            // @TODO getRating
+            ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+                @Override
+                public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                    Log.d("TAG", "Ratting" + v + " " + b);
+                    storeRatingJSON();
+                }
+            });
 
 
         }
     }
 
    private void storeRatingJSON() {
-        //  JSON
+     final String FILE_NAME="thanos.json";
         Log.d(TAG, "Save Rating");
         JSONArray data = new JSONArray();
         for (int i = 0; i < this.ratings.size(); i++) {
@@ -176,63 +167,16 @@ public class AttractionDetail extends AppCompatActivity {
         }
         String toWrite  = data.toString();
         Log.d(TAG, "Data: " + toWrite);
-   // this.writeToFile("test.json", data);
-         /*
-
-    // create a file object
-File f = new File("program.txt");
-
-// create a file with the absolute path
-// of file f
-File absolute = f.getAbsoluteFile();
-f.getPath()
-     */
-//
-//    JsonArray json = new ...
-//            Json.add(userObject)
 
         //    try {
 //        OutputStreamWriter outputStreamWriter =
-//                new OutputStreamWriter(openFileOutput(USERS_FILE, Context.MODE_PRIVATE));
+//        new OutputStreamWriter(openFileOutput(USERS_FILE, Context.MODE_PRIVATE));
 //        outputStreamWriter.write(data);
 //        outputStreamWriter.close();
 //    } catch (IOException e) {
 //        e.printStackTrace();
 //    }
-//    public void saveRating(String userEmail) {
-//      //  final String FILE_NAME="thanos.json";
-//        File file = new File("thanos.json");
-//        File absolute = file.getAbsoluteFile();
-//        String path = file.getPath();
-//
-//
-//        FileReader fileReader = null;
-//        FileWriter fileWriter = null;
-//        BufferedReader bufferedReader = null;
-//        BufferedWriter bufferedWriter = null;
-//
-//        String response = null;
-//
-//        if (!file.exists()) {
-//            try {
-//                file.createNewFile();
-//                fileWriter = new FileWriter((file.getAbsoluteFile()));
-//                bufferedWriter = new BufferedWriter(fileWriter);
-//                bufferedWriter.write("{}");
-//                bufferedWriter.close();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//        SringBuffer output = new StringBuffer();
-//        fileReader = new FileReader(file.getAbsolutePath());
-//
-//
-//    }
-   // }
-
-}  // end JSON
+}  
 
     public void btnGoBack(View view) {
         // create an Intent
