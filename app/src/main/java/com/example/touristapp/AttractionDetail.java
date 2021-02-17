@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -89,9 +90,11 @@ public class AttractionDetail extends AppCompatActivity {
 
             TextView detailPhone = findViewById(R.id.tvPhone);
             detailPhone.setText(attraction.phone);
+//            Linkify.addLinks(detailPhone, Linkify.PHONE_NUMBERS);
 
             TextView detailWebsite = findViewById(R.id.tvWebsite);
             detailWebsite.setText(attraction.website);
+            Linkify.addLinks(detailWebsite, Linkify.ALL);
 
             ImageView img1 = findViewById(R.id.imImage1);
             String image1 = (String) attraction.image1;
@@ -103,21 +106,21 @@ public class AttractionDetail extends AppCompatActivity {
             int resID2 = getResources().getIdentifier(image2, "drawable", getPackageName());
             img2.setImageResource(resID2);
 
-            detailWebsite.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(), "WEBSITE", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse(attraction.website));
-
-                    if (intent.resolveActivity(getPackageManager()) != null) {
-                        startActivity(intent);
-                    }
-
-                }
-
-            });
-
+//            detailWebsite.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Toast.makeText(getApplicationContext(), "WEBSITE", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(Intent.ACTION_VIEW);
+//                    intent.setData(Uri.parse(attraction.website));
+//
+//                    if (intent.resolveActivity(getPackageManager()) != null) {
+//                        startActivity(intent);
+//                    }
+//
+//                }
+//
+//            });
+//
             detailPhone.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -237,4 +240,12 @@ f.getPath()
         intent.putExtra("u", username);
         startActivity(intent);
     }
+
+    public void logoutPressed(View view) {
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+
+
+
 }
