@@ -57,8 +57,8 @@
         android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imImage1"
-        app:layout_constraintTop_toBottomOf="@+id/tvName"
-        app:srcCompat="@drawable/copacabana2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
+<!--        app:srcCompat="@drawable/copacabana2" />-->
 
     <TextView
         android:id="@+id/tvDescription"
@@ -92,10 +92,23 @@
         android:layout_marginTop="5dp"
         android:layout_weight="0.1"
         android:text="@string/website"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <RatingBar
+        android:id="@+id/rbAttraction"
+        android:layout_width="252dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:numStars="5"
+        android:rating="0.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWebsite" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -121,48 +134,50 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.1"
             android:text="@string/phone"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="31dp"
             tools:layout_editor_absoluteY="537dp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayoutBtn"
-        android:layout_width="221dp"
-        android:layout_height="46dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWebsite">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/linearLayoutBtn"-->
+<!--        android:layout_width="221dp"-->
+<!--        android:layout_height="46dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tvWebsite">-->
 
-        <Button
-            android:id="@+id/btnGoToDial"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:onClick="btnGoToDial"
-            android:text="Dial" />
+<!--        <Button-->
+<!--            android:id="@+id/btnGoToDial"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="monospace"-->
+<!--            android:onClick="btnGoToDial"-->
+<!--            android:text="Dial" />-->
 
-        <Button
-            android:id="@+id/btnGoToWebsite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="monospace"
-            android:onClick="btnGoToWebsite"
-            android:text="Website" />
-    </LinearLayout>
+<!--        <Button-->
+<!--            android:id="@+id/btnGoToWebsite"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="monospace"-->
+<!--            android:onClick="btnGoToWebsite"-->
+<!--            android:text="Website" />-->
+<!--    </LinearLayout>-->
 
     <Button
         android:id="@+id/btnGoBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:fontFamily="monospace"
         android:onClick="btnGoBack"
         android:text="Go Back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/rbAttraction" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

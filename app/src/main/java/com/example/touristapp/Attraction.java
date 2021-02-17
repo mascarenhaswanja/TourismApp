@@ -12,12 +12,10 @@ public class Attraction implements Serializable {
     String website;
     String phone;
     String mainImage;
-//  String image1;
-//    String image2;
- //   ArrayList<String> images = new ArrayList<String>();
+    String image1;
+    String image2;
 
-  //  public Attraction(int id, String name, String address, String description, int price, String website, String phone, ArrayList images) {
-    public Attraction(int id, String name, String address, String description, int price, String website, String phone, String mainImage) {
+    public Attraction(int id, String name, String address, String description, int price, String website, String phone, String mainImage, String image1, String image2) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -26,13 +24,7 @@ public class Attraction implements Serializable {
         this.website = website;
         this.phone = phone;
         this.mainImage = mainImage;
-//        this.image1 = image1;
-//        this.image2 = image2;
-
-        //  @TODO - review  store images
-//        for (int i=0; i < images.size(); i++){
-//            this.images.add(String.valueOf(images.get(i)));
-//        }
-
+        this.image1 = image1;
+        this.image2 = image2;
     }
 }

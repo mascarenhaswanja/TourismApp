@@ -26,11 +26,17 @@ public class AttractionList extends AppCompatActivity implements Serializable {
 
     ArrayList<Attraction> attractions = new ArrayList<Attraction>();
     AttractionAdapter adapter = null;
+    Intent user;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attraction_list);
+
+        user = getIntent();
+        username = user.getStringExtra("u");
+        Log.d(TAG, "User " + username);
 
         ListView lv = findViewById((R.id.lvAttractions));
         adapter = new AttractionAdapter(this, attractions);
@@ -44,13 +50,8 @@ public class AttractionList extends AppCompatActivity implements Serializable {
             public void onItemClick(AdapterView<?> adapterView, View v, int position, long id) {
                 Intent intent = new Intent(AttractionList.this, AttractionDetail.class);
                 intent.putExtra("attractionDetail", attractions.get(position));
-
-                String emailToPass = intent.getStringExtra("email");
-                intent.putExtra("emailUser", emailToPass);
-
+                intent.putExtra("u", username);
                 startActivity(intent);
-
-
             }
         });
     }
@@ -119,27 +120,11 @@ public class AttractionList extends AppCompatActivity implements Serializable {
                         String attWebsite = attraction.getString("website");
                         String attPhone = attraction.getString("phone");
                         String attMainImage = attraction.getString("mainImage");
-                        //Toast.makeText(this,"Image " + attMainImage, Toast.LENGTH_LONG).show();
+                        JSONArray imageList = attraction.getJSONArray("images");
+                        String attImage1 = imageList.getString(0);
+                        String attImage2 = imageList.getString(1);
 
-                        // ERROR
-//                        JSONArray imageList = jsonObject.getJSONArray("images");
-//                        Log.d(TAG, "Numbers of Images  " + imageList.length());
-//                        for(int j=0; j < imageList.length(); j++) {
-//                            String image = imageList.getString(j);
-//                            Log.d(TAG, image);
-//                        }
-
-//                        String image [] = new String[2];
-//                        image[0] = images.getString(0);
-//                        image[1] = images.getString(1);
-//                        Log.d(TAG, attName);
-//                        Log.d(TAG, image[0])
-
-                        // ERROR
-
-                        attractions.add(new Attraction(i, attName, attAddress, attDescription, attPrice, attWebsite, attPhone, attMainImage));
-                        //attractions.add(new Attraction(i, attName, attAddress, attDescription, attPrice, attWebsite, attPhone, attimage1, attimage2));
-      //                  attractions.add(new Attraction(i, attName, attAddress, attDescription, attPrice, attWebsite, attPhone, R.drawable.attimage1, R.drawable.attimage2));
+                        attractions.add(new Attraction(i, attName, attAddress, attDescription, attPrice, attWebsite, attPhone, attMainImage, attImage1, attImage2));
                     }
 
                 } catch (JSONException e) {
