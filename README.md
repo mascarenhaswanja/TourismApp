@@ -1,6 +1,6 @@
 # TOURISM APP - Rio de Janeiro
 
-![DemoApp](DemoTouristApp.gif)
+![](DemoTouristApp.gif)
 
 # How to run
 
