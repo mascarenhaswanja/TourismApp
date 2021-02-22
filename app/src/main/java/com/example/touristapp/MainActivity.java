@@ -44,9 +44,6 @@ public class MainActivity extends AppCompatActivity implements Serializable {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // @TODO Delete  this  User test
-        users.add(new User("q", "q", false));
-
         users.add(new User("thanos@gmail.com", "1234", false));
         users.add(new User("wonderwoman@yahoo.com", "abc!!", false));
 
@@ -131,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements Serializable {
                     preferencesEditor.putBoolean("Check",false);
                 }
                 preferencesEditor.apply();
-                Toast.makeText(getBaseContext(), "Saved", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(), "Saved", Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "Checked shared preference saved!");
 
             }

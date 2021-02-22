@@ -2,9 +2,9 @@ package com.example.touristapp;
 
 public class Rating {
     int attractionRating;
-    int rating;
+    float rating;
 
-    public Rating(int attractionRating, int rating) {
+    public Rating(int attractionRating, float rating) {
         this.attractionRating = attractionRating;
         this.rating = rating;
     }
@@ -17,12 +17,12 @@ public class Rating {
         this.attractionRating = attractionRating;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
-        this.rating = rating;
+    public void setRating(float  rating) {
+         this.rating = rating;
     }
 }
 

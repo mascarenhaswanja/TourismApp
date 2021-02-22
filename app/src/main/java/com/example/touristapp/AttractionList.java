@@ -2,7 +2,9 @@ package com.example.touristapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,8 +38,14 @@ public class AttractionList extends AppCompatActivity implements Serializable {
 
         user = getIntent();
         username = user.getStringExtra("u");
-        Log.d(TAG, "User " + username);
 
+        if (user.equals(null)) {
+            SharedPreferences prefs = getSharedPreferences("login", Context.MODE_PRIVATE);
+            String email = prefs.getString("email",null);
+            username = email.split("@")[0];
+        }
+
+        Log.d("TAG","User in List " + username);
         ListView lv = findViewById((R.id.lvAttractions));
         adapter = new AttractionAdapter(this, attractions);
         lv.setAdapter(adapter);

@@ -102,7 +102,6 @@ public class AttractionDetail extends AppCompatActivity {
 //                public void onClick(View v) {
 //                    Toast.makeText(getApplicationContext(), "WEBSITE", Toast.LENGTH_SHORT).show();
 //                    Intent intent = new Intent(Intent.ACTION_VIEW);
-//                    intent.setData(Uri.parse(attraction.website));
 //
 //                    if (intent.resolveActivity(getPackageManager()) != null) {
 //                        startActivity(intent);
@@ -115,7 +114,7 @@ public class AttractionDetail extends AppCompatActivity {
             detailPhone.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(), "PHONE ", Toast.LENGTH_SHORT).show();
+                //    Toast.makeText(getApplicationContext(), "PHONE ", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Intent.ACTION_DIAL);
                     intent.setData(Uri.parse("tel:"+attraction.phone));
                     startActivity(intent);
@@ -135,48 +134,48 @@ public class AttractionDetail extends AppCompatActivity {
             // @TODO getRating
             ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
                 @Override
-                public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                    Log.d("TAG", "Ratting" + v + " " + b);
-                    storeRatingJSON();
+                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromTouch) {
+                    Float ratingvalue = (Float) ratingBar.getRating();
+                  //  Toast.makeText(getApplicationContext(), " Ratings: " + ratingvalue, Toast.LENGTH_SHORT).show();
+                    storeRatingJSON(ratingvalue);
                 }
             });
-
-
         }
     }
 
-   private void storeRatingJSON() {
-     final String FILE_NAME="thanos.json";
-        Log.d(TAG, "Save Rating");
-        JSONArray data = new JSONArray();
-        for (int i = 0; i < this.ratings.size(); i++) {
-            Rating rating = ratings.get(i);
-            JSONObject object = null;
+   private void storeRatingJSON(float starsRating) {
+      final String FILE_NAME = username + ".json";
+       Log.d(TAG, "Save Rating");
+     //  Toast.makeText(getApplicationContext(),  FILE_NAME, Toast.LENGTH_SHORT).show();
 
-            try {
-                object = new JSONObject();
-                object.put("attractionRating", rating.getAttractionRating());
-                object.put("rating", rating.getRating());
-                data.put(i, object);
-            }
-            catch (Exception e) {
-                Log.d(TAG, "JSON failed");
-                e.printStackTrace();
-            }
-
-        }
-        String toWrite  = data.toString();
-        Log.d(TAG, "Data: " + toWrite);
-
-        //    try {
-//        OutputStreamWriter outputStreamWriter =
-//        new OutputStreamWriter(openFileOutput(USERS_FILE, Context.MODE_PRIVATE));
-//        outputStreamWriter.write(data);
-//        outputStreamWriter.close();
-//    } catch (IOException e) {
-//        e.printStackTrace();
-//    }
-}  
+//        JSONArray data = new JSONArray();
+//        for (int i = 0; i < this.ratings.size(); i++) {
+//            Rating rating = ratings.get(i);
+//            JSONObject object = null;
+//
+//            try {
+//                object = new JSONObject();
+//                object.put("attractionRating", rating.getAttractionRating());
+//                object.put("rating", rating.getRating());
+//                data.put(i, object);
+//            } catch (Exception e) {
+//                Log.d(TAG, "JSON failed");
+//                e.printStackTrace();
+//            }
+//
+//
+//            String toWrite = data.toString();
+//            Log.d(TAG, "Data: " + toWrite);
+//
+//            try {
+//                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(openFileOutput(FILE_NAME, Context.MODE_PRIVATE));
+//                outputStreamWriter.write(toWrite);
+//                outputStreamWriter.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+}
 
     public void btnGoBack(View view) {
         // create an Intent
@@ -189,7 +188,4 @@ public class AttractionDetail extends AppCompatActivity {
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
-
-
-
 }

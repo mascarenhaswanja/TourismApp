@@ -82,40 +82,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
         android:text="@string/website" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <TextView
+        android:id="@+id/tvPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
-
-        <TextView
-            android:id="@+id/tvPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:autoLink="phone"
-            android:layout_marginTop="5dp"
-            android:text="@string/phone"
-            tools:layout_editor_absoluteX="31dp"
-            tools:layout_editor_absoluteY="537dp" />
-
-    </LinearLayout>
-
+        android:layout_marginTop="5dp"
+        android:text="@string/phone"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+<!--        tools:layout_editor_absoluteX="31dp"-->
+<!--        tools:layout_editor_absoluteY="537dp" />-->
+    <!--        android:layout_width="387dp"-->
+    <!--        android:layout_height="99dp"-->
     <RatingBar
         android:id="@+id/rbAttraction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
         android:numStars="5"
-        android:rating="0.0" />
+        android:rating="0.5"/>
+
+<!--    android:stepSize="1"-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp">
+
         <Button
             android:id="@+id/btnGoBack"
             android:layout_width="wrap_content"
