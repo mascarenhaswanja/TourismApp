@@ -1,7 +1,4 @@
-<html style="height: 100%;">
-    <body style="margin: 0px; background: #0e0e0e; height: 100%">
-        <img style="-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;" src="https://res.cloudinary.com/dxyux3wnj/image/upload/v1614002600/Tourist_App_nec2qz.gif" width="272" height="154">
-    </body>
+<html>
 
 <head>
    <meta name="viewport" content="width=device-width, minimum-scale=0.1">
@@ -12,11 +9,9 @@
    TOURISM APP - Rio de Janeiro
 </h1>
 
-<div>
 ![DemoApp](https://res.cloudinary.com/dxyux3wnj/image/upload/v1614002600/Tourist_App_nec2qz.gif)
-</div>
 
-## How to run
+# How to run
 
 Clone the project
 
@@ -33,26 +28,23 @@ Clone the project
     Run the project
 ```
 
-## Resources
+# Resources
 
-```sh
-  1. [Android Studio] (https://developer.android.com/docs) - Documentation app developers
+1. [Android Studio] (https://developer.android.com/docs) - Documentation app developers
 
-  2. Java
+2. Java
 
-  3. XML
+3. XML
 
-  4. Intents - Data between screens
+4. Intents - Data between screens
 
-  5. Persisted data- with **JSON**(List of Tourist Attractions and Rating by user attraction
-     [Rating Bar - JSON] (https://medium.com/@naimishverma50/android-writing-a-file-as-a-json-object-400131f6063b)
+5. Persisted data- with **JSON**(List of Tourist Attractions and Rating by user attraction
+   [Rating Bar - JSON] (https://medium.com/@naimishverma50/android-writing-a-file-as-a-json-object-400131f6063b)
 
-  6. SharedPreferences - Email and Password
-     (https://www.youtube.com/watch?v=jiD2fxn8iKA) - store simple key-value data into your Android app.
+6. SharedPreferences - Email and Password
+   (https://www.youtube.com/watch?v=jiD2fxn8iKA) - store simple key-value data into your Android app.
 
-```
-
-#### App Description
+# App Description
 
 The app select some tourist points in Rio de Janeiro.
 
@@ -60,7 +52,7 @@ The app select some tourist points in Rio de Janeiro.
 
 Provide a screen that would allow users to login with a email and password. Valid usernames and passwords are provided. Remember Me **CheckBox** - If the user has this checked, they will be automatically logged in and navigated to the Tourist Attraction List.
 
-# Valid Email and Password:
+## Valid Email and Password:
 
 thanos@gmail.com - 1234
 
