@@ -1,15 +1,36 @@
-# TOURISM APP - Rio de Janeiro
+<h1 align="center">
+   TOURISM APP - Rio de Janeiro
+</h1>
 
 <div align="center">
-
-<img src="https://drive.google.com/file/d/1yM-DPDqS7q3vYbS8RjQkD88cI1f4w4t5/view" alt="Preview" height=400/>
-
+<img src="https://res.cloudinary.com/dxyux3wnj/image/upload/v1614002600/Tourist_App_nec2qz.gif" alt="Preview" height=400/>
 </div>
- 
-#### APP DESCRIPTION:
+
+## How to run
+
+Clone the project
+
+```sh
+# Clone this repo:
+    https://github.com/mascarenhaswanja/TourismApp.git
+
+# Open in Android Studio
+    TourismApp project
+
+    Choose your device - emulator
+
+    Run the project
+```
+
+## Resources
+
+**Android Studio**
+**Java**
+**XML**
+
+#### APP DESCRIPTION
 
 The app select some tourist points in Rio de Janeiro.
-Tools: **Android Studio**, **Java** and **XML**.  
 Data between screens: **intents**.
 Persisted data: with **JSON**(Tourist Attractions) and
 **SharedPreferences**(Email and Password)
