@@ -1,13 +1,6 @@
-<html>
+# TOURISM APP - Rio de Janeiro
 
-<head>
-   <meta name="viewport" content="width=device-width, minimum-scale=0.1">
-   <title>TourismApp.gif (902×442)</title>
-</head>
-
-<h1>
-   TOURISM APP - Rio de Janeiro
-</h1>
+<!-- <iframe src="https://drive.google.com/file/d/1yM-DPDqS7q3vYbS8RjQkD88cI1f4w4t5/preview" width="640" height="480"></iframe> -->
 
 ![DemoApp](https://res.cloudinary.com/dxyux3wnj/image/upload/v1614002600/Tourist_App_nec2qz.gif)
 
@@ -28,9 +21,9 @@ Clone the project
     Run the project
 ```
 
-# Resources
+# Technologies and Resources
 
-1. [Android Studio] (https://developer.android.com/docs) - Documentation app developers
+1. [Android Studio](https://developer.android.com/docs) - Documentation app developers
 
 2. Java
 
@@ -39,10 +32,10 @@ Clone the project
 4. Intents - Data between screens
 
 5. Persisted data- with **JSON**(List of Tourist Attractions and Rating by user attraction
-   [Rating Bar - JSON] (https://medium.com/@naimishverma50/android-writing-a-file-as-a-json-object-400131f6063b)
+   [Rating Bar - JSON](https://medium.com/@naimishverma50/android-writing-a-file-as-a-json-object-400131f6063b)
 
-6. SharedPreferences - Email and Password
-   (https://www.youtube.com/watch?v=jiD2fxn8iKA) - store simple key-value data into your Android app.
+6. Shared Preferences - Email and Password
+   [Shared Preferences](https://www.youtube.com/watch?v=jiD2fxn8iKA) - store simple key-value data into your Android app.
 
 # App Description
 
@@ -75,5 +68,3 @@ The screen should also contain a Rating Bar where the user can rate the attracti
 ## Buttons
 
 Login, Go Back and Logout
-
-</html>
