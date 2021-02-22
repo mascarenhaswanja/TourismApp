@@ -1,8 +1,6 @@
 # TOURISM APP - Rio de Janeiro
 
-<!-- <iframe src="https://drive.google.com/file/d/1yM-DPDqS7q3vYbS8RjQkD88cI1f4w4t5/preview" width="640" height="480"></iframe> -->
-
-![DemoApp](https://res.cloudinary.com/dxyux3wnj/image/upload/v1614002600/Tourist_App_nec2qz.gif)
+![DemoApp](DemoTouristApp.gif)
 
 # How to run
 
