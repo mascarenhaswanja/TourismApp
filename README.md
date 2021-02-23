@@ -1,6 +1,6 @@
 # Tourist APP - Rio de Janeiro
 
-<p style="text-align: center;">![](DemoTouristApp.gif)</p>
+<span style="display:block;text-align:center">![](DemoTouristApp.gif)</span>
 
 # How to run
 
