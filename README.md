@@ -1,17 +1,17 @@
-# TOURISM APP - Rio de Janeiro
+# Tourist APP - Rio de Janeiro
 
-![](DemoTouristApp.gif)
+<p style="text-align: center;">![](DemoTouristApp.gif)</p>
 
 # How to run
 
 Clone the project
 
-```sh
+```
 
 - Clone this repo:
     https://github.com/mascarenhaswanja/TourismApp.git
 
-- Open in Android Studio
+- Open in Android Studio:
     TourismApp project
 
     Choose your device - emulator
@@ -19,7 +19,7 @@ Clone the project
     Run the project
 ```
 
-# Technologies and Resources
+# :books: Technologies and Resources
 
 1. [Android Studio](https://developer.android.com/docs) - Documentation app developers
 
@@ -57,9 +57,9 @@ After logging in, the app must display a list of popular tourist attractions in 
 
 Display a screen that shows more detailed information about the attraction (name, address, phone no, website, two photos, description and pricing).
 
-- Clicking on the attraction’s phone number will automatically open the phone dialer so the user can attempt to call said place.
-- Clicking on the website will automatically open a browser displaying the website
-- Rating Bar where the user can rate the attraction. The user’s rating for an attraction should be saved to a json file.
+- :phone: Clicking on the attraction’s phone number will automatically open the phone dialer so the user can attempt to call said place.
+- :computer: Clicking on the website will automatically open a browser displaying the website
+- :star: Rating Bar where the user can rate the attraction. The user’s rating for an attraction should be saved to a json file.
 
 The screen should also contain a Rating Bar where the user can rate the attraction. The user’s rating for an attraction should be saved to a json file.
 
